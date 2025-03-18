@@ -1,0 +1,82 @@
+---
+import { Image, Picture } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import post05Img from "../../assets/images/post-05.png";
+---
+
+<Layout>
+    <h1 class="text-5xl text-white">Imagenes</h1>
+
+    <img
+        src="/assets/images/post-05.png"
+        loading="eager"
+        width="250"
+        height="250"
+    />
+
+    <Image
+        src={post05Img}
+        loading="eager"
+        width="250"
+        height="250"
+        alt="Imagen del post"
+    />
+    <Image
+        style={{
+            width: "250px",
+            height: "250px",
+        }}
+        src={post05Img}
+        loading="eager"
+        width="500"
+        height="500"
+        alt="Imagen del post"
+    />
+
+    <h1 class="text-white mt-10">Quality Low</h1>
+    <Image
+        src={post05Img}
+        quality="low"
+        width="250"
+        height="250"
+        alt="Imagen del post"
+    />
+    <h1 class="text-white mt-10">Quality HIGH</h1>
+    <Image
+        src={post05Img}
+        quality="high"
+        width="250"
+        height="250"
+        alt="Imagen del post"
+    />
+    <h1 class="text-white mt-10">Formatos</h1>
+    <Image
+        src={post05Img}
+        format="avif"
+        width="250"
+        height="250"
+        alt="Imagen del post"
+    />
+    <h1 class="text-white mt-10">Picture</h1>
+    <!-- formats={["webp", "avif", "jpeg", "png"]} -->
+    <!-- widths={[240, 540, 720, post05Img.width]}
+            sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${post05Img.width}px`} -->
+
+    <!--- width={post05Img.width / 2}
+        densities={[1.5, 2]} -->
+    <Picture src={post05Img} alt="Imagen del post" />
+
+    <div
+        style={{
+            height: "3000px",
+        }}
+    >
+    </div>
+
+    <img
+        src="/assets/images/post-05.png"
+        loading="lazy"
+        width="250"
+        height="250"
+    />
+</Layout>
